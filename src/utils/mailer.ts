@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer'
 import {Options} from "nodemailer/lib/mailer";
 
 export const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
+    host: "mail.privateemail.com",
     port: 465,
     secure: true,
     auth: {
@@ -14,7 +14,7 @@ export const transporter = nodemailer.createTransport({
 const sendMail = async (options: Options) => {
     options = {
         from: process.env.EMAIL_USER,
-        to: "fadi.gorges.03@gmail.com",
+        to: process.env.EMAIL_USER,
         ...options
     }
 
