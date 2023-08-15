@@ -37,21 +37,23 @@ const ProjectsSection = () => {
         <Section id="projects" bg="base-200">
             <h3 className="text-primary font-extrabold">MY PROJECTS</h3>
             {projects.map(project => (
-                <div key={project.name} className="grid grid-cols-12 gap-14 mt-10 p-8 bg-base-100 rounded-3xl transition
-                hover:shadow-lg">
-                    <div className="col-span-6">
-                        <Image src={project.image} alt={`${project.name} Mockup`} width={500} height={500}
-                               className="mx-auto"/>
-                    </div>
-                    <div className="col-span-6 flex flex-col gap-5 justify-center">
-                        <h4 className="font-bold">{project.name}</h4>
-                        <h6>
-                            {project.description}
-                        </h6>
-                        <a href={project.link} target="_blank" className="btn btn-primary">
-                            {project.buttonText}
-                            <ArrowTopRightOnSquareIcon className="w-6 h-6 ml-2"/>
-                        </a>
+                <div key={project.name} className="scroll-transition slide-in-left">
+                    <div className="grid grid-cols-12 gap-14 mt-10 p-8 bg-base-100 rounded-3xl transition
+                        hover:shadow-lg">
+                        <div className="col-span-6">
+                            <Image src={project.image} alt={`${project.name} Mockup`} width={500} height={500}
+                                   className="mx-auto"/>
+                        </div>
+                        <div className="col-span-6 flex flex-col gap-5 justify-center">
+                            <h4 className="font-bold">{project.name}</h4>
+                            <h6>
+                                {project.description}
+                            </h6>
+                            <a href={project.link} target="_blank" className="btn btn-primary">
+                                {project.buttonText}
+                                <ArrowTopRightOnSquareIcon className="w-6 h-6 ml-2"/>
+                            </a>
+                        </div>
                     </div>
                 </div>
             ))}

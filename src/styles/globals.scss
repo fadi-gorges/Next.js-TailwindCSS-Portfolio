@@ -49,8 +49,16 @@
     @apply translate-y-0 opacity-100
   }
 
+  .scroll-transition.slide-in-left {
+    @apply -translate-x-4 opacity-0 transition duration-700
+  }
+
+  .scroll-transition.slide-in-left.show {
+    @apply translate-x-0 opacity-100
+  }
+
   .scroll-transition.fade-in {
-    @apply translate-y-2 opacity-0 transition duration-200
+    @apply translate-y-4 opacity-0 transition duration-200
   }
 
   .scroll-transition.fade-in.show {
