@@ -7,7 +7,7 @@ const Footer = () => {
                 <CodeBracketIcon className="w-14 h-14"/>
                 <p>
                     <b>FadiGorges.DEV</b>
-                    <br/>Software Engineer &amp; Web Developer
+                    <br/>Software Engineer &amp; Developer
                 </p>
                 <p>Copyright © 2023 - All right reserved</p>
             </div>
