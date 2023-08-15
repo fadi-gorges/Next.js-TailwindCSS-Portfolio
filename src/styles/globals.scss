@@ -41,12 +41,21 @@
     background-color: transparent #{!important};
   }
 
-  .slideIn {
-      @apply translate-y-10 opacity-0 transition duration-700
+  .scroll-transition.slide-in {
+    @apply translate-y-10 opacity-0 transition duration-700
   }
 
-  .show {
-      @apply translate-y-0 opacity-100
+  .scroll-transition.slide-in.show {
+    @apply translate-y-0 opacity-100
+  }
+
+  .scroll-transition.fade-in {
+    @apply opacity-0
+  }
+
+  .scroll-transition.fade-in.show {
+    transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    @apply opacity-100 transition-shadow transition-transform
   }
 }
 
