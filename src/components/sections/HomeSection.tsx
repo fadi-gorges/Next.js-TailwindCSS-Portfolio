@@ -10,7 +10,7 @@ const HomeSection = () => {
                         Full-Stack <br/>
                         Software Developer
                     </h1>
-                    <h4>Hi, I'm Fadi Gorges, an enthusiastic Software Engineering student based in Sydney,
+                    <h4>Hi, I&aposm Fadi Gorges, an enthusiastic Software Engineering student based in Sydney,
                         Australia.</h4>
                     <div className="flex gap-5">
                         <a href="https://www.linkedin.com/in/fadi-gorges-174a88246/" target="_blank">
