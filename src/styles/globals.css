@@ -48,12 +48,11 @@
   }
 
   .scroll-transition.fade-in {
-    @apply opacity-0;
+    @apply translate-y-2 opacity-0 transition duration-200;
   }
 
   .scroll-transition.fade-in.show {
-    transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
-    @apply opacity-100 transition-shadow transition-transform;
+    @apply translate-y-0 opacity-100;
   }
 }
 .btn {
