@@ -12,7 +12,7 @@ const Utils = ({children}: { children: React.ReactNode }) => {
                 threshold: 0.25
             }
         );
-        document.querySelectorAll('.slideIn').forEach(element => {
+        document.querySelectorAll('.scroll-transition').forEach(element => {
             observer.observe(element)
         })
     }, []);
