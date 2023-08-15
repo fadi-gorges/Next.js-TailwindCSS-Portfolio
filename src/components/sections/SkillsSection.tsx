@@ -88,15 +88,20 @@ const SkillsSection = () => {
             <h3 className="text-primary font-extrabold">MY SKILLS</h3>
             <div className="grid grid-cols-12 gap-5 mt-10">
                 {
-                    skills.map(skill => (
-                        <div key={skill.name} className="col-span-3 flex flex-col items-center pt-4 pb-5 border
-                            transition hover:shadow-lg hover:-translate-y-2 scroll-transition fade-in">
-                            <SvgParent className="w-40 h-40">
-                                {skill.icon}
-                            </SvgParent>
-                            <h5 className="font-bold">{skill.name}</h5>
-                        </div>
-                    ))
+                    skills.map((skill, index) => {
+                        return (
+                            <div key={skill.name} className="col-span-3 scroll-transition fade-in"
+                                style={{transitionDelay: `${index * 100}ms`}}>
+                                <div className="w-full h-full flex flex-col items-center pt-4 pb-5 border transition
+                                    hover:shadow-lg hover:-translate-y-2">
+                                    <SvgParent className="w-40 h-40">
+                                        {skill.icon}
+                                    </SvgParent>
+                                    <h5 className="font-bold">{skill.name}</h5>
+                                </div>
+                            </div>
+                        )
+                    })
                 }
             </div>
             <h4 className="text-end font-medium mt-5">and more...</h4>
