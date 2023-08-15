@@ -90,7 +90,7 @@ const SkillsSection = () => {
                 {
                     skills.map(skill => (
                         <div key={skill.name} className="col-span-3 flex flex-col items-center pt-4 pb-5 border
-                            transition hover:shadow-lg hover:-translate-y-2">
+                            transition hover:shadow-lg hover:-translate-y-2 scroll-transition fade-in">
                             <SvgParent className="w-40 h-40">
                                 {skill.icon}
                             </SvgParent>
