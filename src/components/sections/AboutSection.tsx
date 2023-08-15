@@ -7,9 +7,9 @@ const AboutSection = () => {
             <div className="grid grid-cols-12 h-full gap-x-16">
                 <div className="col-span-5 flex flex-col justify-center items-center gap-8">
                     <Image src="/about-image.jpg" alt="Portrait of Fadi Gorges" width={400} height={400}
-                           className="w-full aspect-square rounded-3xl shadow-md object-cover slideIn"/>
+                           className="w-full aspect-square rounded-3xl shadow-md object-cover scroll-transition slide-in"/>
                 </div>
-                <div className="col-span-7 flex flex-col gap-3 justify-center slideIn delay-100">
+                <div className="col-span-7 flex flex-col gap-3 justify-center scroll-transition slide-in delay-100">
                     <h4 className="text-primary font-extrabold">ABOUT ME</h4>
                     <h4 className="font-bold">
                         I am passionate about designing and developing beautiful, fast and intuitive software.
