@@ -11,7 +11,7 @@ const Section = ({id, bg = "base-100", theme = 'light', fullScreen = false, chil
 
     return (
         <div id={id} data-theme={theme} className={sectionClasses}>
-            <div className="container h-full max-w-6xl mx-auto p-8 lg:p-20">
+            <div className="container h-full max-w-7xl mx-auto p-8 lg:p-20">
                 {children}
             </div>
         </div>
