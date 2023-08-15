@@ -1,12 +1,19 @@
 "use client";
 import React, {useEffect, useState} from "react";
-import {AcademicCapIcon, CircleStackIcon, CodeBracketIcon, EnvelopeIcon,} from "@heroicons/react/24/outline";
+import {
+    AcademicCapIcon,
+    CircleStackIcon,
+    CodeBracketIcon,
+    EnvelopeIcon,
+    WrenchScrewdriverIcon,
+} from "@heroicons/react/24/outline";
 import {
     AcademicCapIcon as AcademicCapIconFilled,
     Bars3Icon,
     CircleStackIcon as CircleStackIconFilled,
     CodeBracketSquareIcon,
-    EnvelopeIcon as EnvelopeIconFilled
+    EnvelopeIcon as EnvelopeIconFilled,
+    WrenchScrewdriverIcon as WrenchScrewdriverIconFilled,
 } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
@@ -26,6 +33,12 @@ const navLinks = [
         href: "about",
         icon: <AcademicCapIcon/>,
         filledIcon: <AcademicCapIconFilled/>,
+    },
+    {
+        text: "Skills",
+        href: "skills",
+        icon: <WrenchScrewdriverIcon/>,
+        filledIcon: <WrenchScrewdriverIconFilled/>,
     },
     {
         text: "Projects",
@@ -51,7 +64,7 @@ const NavProvider = ({children}: { children: React.ReactNode }) => {
     const [currentSection, setCurrentSection] = useState(0);
 
     const navbarClasses = `w-full navbar fixed top-0 transition z-10 
-        ${scrolledDown ? "bg-base-100/80 backdrop-blur shadow-md shadow-black/5" : "bg-base-100"}`;
+        ${scrolledDown ? "bg-base-100/90 backdrop-blur shadow-xl shadow-black/5" : "bg-base-100"}`;
 
     useEffect(() => {
         setSections(document.querySelectorAll(".section"))
