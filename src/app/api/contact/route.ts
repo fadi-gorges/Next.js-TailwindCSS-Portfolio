@@ -1,6 +1,12 @@
 import {NextRequest, NextResponse} from 'next/server'
 import sendMail from "@utils/mailer";
 
+type ContactFormData = {
+    name: string;
+    email: string;
+    message: string;
+}
+
 export async function POST(request: NextRequest) {
     const data: ContactFormData = await request.json()
 
