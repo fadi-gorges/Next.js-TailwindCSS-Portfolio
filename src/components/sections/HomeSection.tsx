@@ -1,7 +1,35 @@
+'use client'
 import Image from "next/image";
 import Section from "@components/page/Section";
+import {useEffect, useState} from "react";
 
 const HomeSection = () => {
+    const [titleText, setTitleText] = useState("")
+    const [titleTextRemaining, setTitleTextRemaining] = useState("Developer")
+
+    const incrementTitleText = ({currentTitleText, currentTitleTextRemaining}: {
+        currentTitleText: string,
+        currentTitleTextRemaining: string
+    }) => {
+        if (titleTextRemaining.length > 0) {
+            const newTitleText = currentTitleText + currentTitleTextRemaining.charAt(0)
+            const newTitleTextRemaining = currentTitleTextRemaining.substring(1)
+            setTitleText(newTitleText)
+            setTitleTextRemaining(newTitleTextRemaining)
+            setTimeout(incrementTitleText, 100, {
+                currentTitleText: newTitleText,
+                currentTitleTextRemaining: newTitleTextRemaining
+            })
+        }
+    }
+
+    useEffect(() => {
+        incrementTitleText({
+            currentTitleText: titleText,
+            currentTitleTextRemaining: titleTextRemaining
+        })
+    }, [])
+
     return (
         <Section id="home" fullScreen>
             <div className="grid grid-cols-12 h-full gap-y-10">
@@ -13,11 +41,11 @@ const HomeSection = () => {
                 <div className="col-span-12 flex flex-col gap-8 md:row-start-1 md:col-span-7 md:justify-center">
                     <h1 className="hidden md:block text-primary font-extrabold tracking-wide">
                         Full-Stack <br/>
-                        Software Developer
+                        <span className="h1-cursor blinking-cursor">Software {titleText}</span>
                     </h1>
                     <h2 className="md:hidden text-primary font-extrabold tracking-wide">
                         Full-Stack <br/>
-                        Software Developer
+                        <span className="h2-cursor blinking-cursor">Software {titleText}</span>
                     </h2>
                     <h4>Hi, I&apos;m Fadi Gorges, an enthusiastic Software Engineering student based in Sydney,
                         Australia.</h4>

@@ -38,33 +38,63 @@
   .bg-transparent {
     background-color: transparent !important;
   }
-
-  .scroll-transition.slide-in {
-    @apply translate-y-10 opacity-0 transition duration-700;
-  }
-
-  .scroll-transition.slide-in.show {
-    @apply translate-y-0 opacity-100;
-  }
-
-  .scroll-transition.slide-in-left {
-    @apply -translate-x-4 opacity-0 transition duration-700;
-  }
-
-  .scroll-transition.slide-in-left.show {
-    @apply translate-x-0 opacity-100;
-  }
-
-  .scroll-transition.fade-in {
-    @apply translate-y-4 opacity-0 transition duration-200;
-  }
-
-  .scroll-transition.fade-in.show {
-    @apply translate-y-0 opacity-100;
-  }
 }
 .btn {
   text-transform: none;
+}
+
+.scroll-transition.slide-in {
+  @apply translate-y-10 opacity-0 transition duration-700;
+}
+
+.scroll-transition.slide-in.show {
+  @apply translate-y-0 opacity-100;
+}
+
+.scroll-transition.slide-in-left {
+  @apply -translate-x-4 opacity-0 transition duration-700;
+}
+
+.scroll-transition.slide-in-left.show {
+  @apply translate-x-0 opacity-100;
+}
+
+.scroll-transition.fade-in {
+  @apply translate-y-4 opacity-0 transition duration-200;
+}
+
+.scroll-transition.fade-in.show {
+  @apply translate-y-0 opacity-100;
+}
+
+.h1-cursor.blinking-cursor {
+  @apply after:h-12 after:w-1;
+}
+
+.h2-cursor.blinking-cursor {
+  @apply after:h-8 after:w-0.5;
+}
+
+.blinking-cursor {
+  @apply w-fit relative after:absolute after:bottom-0 after:-right-2 after:bg-primary;
+}
+.blinking-cursor:after {
+  animation: blink 0.6s linear infinite alternate;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /*# sourceMappingURL=globals.css.map */
