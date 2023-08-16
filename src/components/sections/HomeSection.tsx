@@ -4,12 +4,21 @@ import Section from "@components/page/Section";
 const HomeSection = () => {
     return (
         <Section id="home" fullScreen>
-            <div className="grid grid-cols-12 h-full gap-x-16">
-                <div className="col-span-8 flex flex-col justify-center gap-8">
-                    <h1 className="text-primary font-extrabold tracking-wide">
+            <div className="grid grid-cols-12 h-full gap-y-16">
+                <div className="col-span-12 flex flex-col justify-end items-center md:col-start-9
+                    md:col-span-4 md:justify-center md:items-start">
+                    <Image src="/fadi.jpg" alt="Portrait of Fadi Gorges" width={300} height={300}
+                           className="w-56 h-56 rounded-full shadow-md md:w-fit md:h-fit"/>
+                </div>
+                <div className="col-span-12 flex flex-col gap-8 md:row-start-1 md:col-span-7 md:justify-center">
+                    <h1 className="hidden md:block text-primary font-extrabold tracking-wide">
                         Full-Stack <br/>
                         Software Developer
                     </h1>
+                    <h2 className="md:hidden text-primary font-extrabold tracking-wide">
+                        Full-Stack <br/>
+                        Software Developer
+                    </h2>
                     <h4>Hi, I&apos;m Fadi Gorges, an enthusiastic Software Engineering student based in Sydney,
                         Australia.</h4>
                     <div className="flex gap-5">
@@ -31,10 +40,6 @@ const HomeSection = () => {
                             </svg>
                         </a>
                     </div>
-                </div>
-                <div className="col-span-4 flex flex-col justify-center">
-                    <Image src="/fadi.jpg" alt="Portrait of Fadi Gorges" width={300} height={300}
-                           className="rounded-full shadow-md"/>
                 </div>
             </div>
         </Section>

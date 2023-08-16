@@ -64,7 +64,7 @@ const NavProvider = ({children}: { children: React.ReactNode }) => {
     const [currentSection, setCurrentSection] = useState(0);
 
     const navbarClasses = `w-full navbar fixed top-0 transition z-10 
-        ${scrolledDown ? "bg-base-100/90 backdrop-blur shadow-xl shadow-black/5" : "bg-base-100"}`;
+        ${scrolledDown ? "bg-base-100/80 backdrop-blur shadow-xl shadow-black/5" : "bg-base-100"}`;
 
     useEffect(() => {
         setSections(document.querySelectorAll(".section"))
@@ -85,7 +85,7 @@ const NavProvider = ({children}: { children: React.ReactNode }) => {
         index: number
     }) => {
         const isActive = currentSection === index;
-        const buttonClasses = `hidden md:flex focus:bg-transparent ${isActive ? "font-bold text-primary hover:text-primary focus:text-primary" : ""}`;
+        const buttonClasses = `hidden lg:flex focus:bg-transparent ${isActive ? "font-bold text-primary hover:text-primary focus:text-primary" : ""}`;
 
         return (
             <li>
@@ -135,7 +135,7 @@ const NavProvider = ({children}: { children: React.ReactNode }) => {
                 </ul>
             </div>
 
-            <div className="flex-none md:hidden">
+            <div className="flex-none lg:hidden">
                 <label htmlFor="navdrawer" className="btn btn-square btn-ghost text-inherit">
                     <Bars3Icon className="h-8 w-8"/>
                 </label>

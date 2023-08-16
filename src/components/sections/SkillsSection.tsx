@@ -86,18 +86,19 @@ const SkillsSection = () => {
     return (
         <Section id="skills" bg="base-100">
             <h3 className="text-primary font-extrabold">MY SKILLS</h3>
-            <div className="grid grid-cols-12 gap-5 mt-10">
+            <div className="grid grid-cols-12 md:gap-5 mt-10">
                 {
                     skills.map((skill, index) => {
                         return (
                             <div key={skill.name} className="col-span-3 scroll-transition fade-in"
-                                style={{transitionDelay: `${index * 100}ms`}}>
-                                <div className="w-full h-full flex flex-col items-center pt-4 pb-5 border transition
-                                    hover:shadow-lg hover:-translate-y-2">
-                                    <SvgParent className="w-40 h-40">
+                                 style={{transitionDelay: `${index * 100}ms`}}>
+                                <div className="w-full h-full flex flex-col items-center pt-4 pb-5 bg-base-100
+                                    border transition hover:shadow-lg hover:-translate-y-2">
+                                    <SvgParent className="w-20 h-20 md:w-40 md:h-40">
                                         {skill.icon}
                                     </SvgParent>
-                                    <h5 className="font-bold">{skill.name}</h5>
+                                    <h5 className="hidden md:block font-bold">{skill.name}</h5>
+                                    <p className="md:hidden font-bold">{skill.name}</p>
                                 </div>
                             </div>
                         )

@@ -4,12 +4,13 @@ import Section from "@components/page/Section";
 const AboutSection = () => {
     return (
         <Section id="about" bg="base-200">
-            <div className="grid grid-cols-12 h-full gap-x-16">
-                <div className="col-span-5 flex flex-col justify-center items-center gap-8">
+            <div className="grid grid-cols-12 h-full gap-y-10">
+                <div className="col-span-12 flex flex-col justify-center items-center gap-8 md:col-span-5">
                     <Image src="/about-image.jpg" alt="Portrait of Fadi Gorges" width={400} height={400}
-                           className="w-full aspect-square rounded-3xl shadow-md object-cover scroll-transition slide-in"/>
+                           className="w-full h-64 md:h-full md:aspect-square rounded-3xl shadow-md object-cover scroll-transition slide-in"/>
                 </div>
-                <div className="col-span-7 flex flex-col gap-3 justify-center scroll-transition slide-in delay-100">
+                <div className="col-span-12 flex flex-col gap-3 justify-center scroll-transition slide-in delay-100
+                    md:col-start-7 md:col-span-6">
                     <h4 className="text-primary font-extrabold">ABOUT ME</h4>
                     <h4 className="font-bold">
                         I am passionate about designing and developing beautiful, fast and intuitive software.

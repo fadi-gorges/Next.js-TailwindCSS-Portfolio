@@ -19,7 +19,7 @@ const projects = [
         Industrial Technology Multimedia course, in which I received an assessment mark of 95/100 (Band 6).`,
         image: "/dungeonofdeath-mockup.png",
         buttonText: "PLAY DUNGEON OF DEATH",
-        link: "https://www.citizenshipau.com"
+        link: ""
     },
     {
         name: "BabylonFadez",
@@ -35,16 +35,16 @@ const projects = [
 const ProjectsSection = () => {
     return (
         <Section id="projects" bg="base-200">
-            <h3 className="text-primary font-extrabold">MY PROJECTS</h3>
+            <h3 className="text-primary font-extrabold mb-8">MY PROJECTS</h3>
             {projects.map(project => (
                 <div key={project.name} className="scroll-transition slide-in-left">
-                    <div className="grid grid-cols-12 gap-14 mt-10 p-8 bg-base-100 rounded-3xl transition
-                        hover:shadow-lg">
-                        <div className="col-span-6">
+                    <div className="grid grid-cols-12 gap-y-8 mt-5 p-8 bg-base-100 rounded-3xl transition
+                        hover:shadow-lg md:mt-10">
+                        <div className="col-span-12 md:col-span-5 flex flex-col justify-center">
                             <Image src={project.image} alt={`${project.name} Mockup`} width={500} height={500}
                                    className="mx-auto"/>
                         </div>
-                        <div className="col-span-6 flex flex-col gap-5 justify-center">
+                        <div className="col-span-12 flex flex-col gap-5 justify-center md:col-start-7 md:col-span-6">
                             <h4 className="font-bold">{project.name}</h4>
                             <h6>
                                 {project.description}
