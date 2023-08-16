@@ -17,8 +17,7 @@ import {
 } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
-import {useScrollYPosition} from "react-use-scroll-position";
-import {scrollIntoView} from "@utils/utils";
+import {scrollIntoView, useScrollPosition} from "@utils/utils";
 
 
 const navLinks = [
@@ -58,7 +57,8 @@ const NavProvider = ({children}: { children: React.ReactNode }) => {
     const pathname = usePathname();
     const [drawerOpen, setDrawerOpen] = useState(false);
 
-    const scrollPos = useScrollYPosition();
+    const scrollPos = useScrollPosition();
+    console.log(scrollPos)
     const [scrolledDown, setScrolledDown] = useState(false);
     const [sections, setSections] = useState<NodeListOf<HTMLElement>>();
     const [currentSection, setCurrentSection] = useState(0);
@@ -73,7 +73,7 @@ const NavProvider = ({children}: { children: React.ReactNode }) => {
     useEffect(() => {
         if (!sections?.length) return
         setScrolledDown(scrollPos > 0);
-        setCurrentSection(sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop - 100) - 1);
+        setCurrentSection(sections.length - [...sections].reverse().findIndex((section) => scrollPos >= section.offsetTop - 100) - 1);
     }, [scrollPos]);
 
     useEffect(() => {

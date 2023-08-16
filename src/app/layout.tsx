@@ -15,12 +15,12 @@ export const metadata = {
 }
 
 export default function RootLayout({children}: { children: React.ReactNode }) {
-    const htmlClasses = `scroll-smooth overflow-hidden sm:overflow-visible ${inter.className}`
+    const htmlClasses = `scroll-smooth overflow-hidden ${inter.className}`
 
     return (
         <html lang="en" data-theme="light" className={htmlClasses}>
         <Utils>
-            <body className="w-full h-full overflow-y-scroll sm:overflow-visible">
+            <body className="w-full h-full overflow-y-scroll">
             <NavProvider>
                 {children}
                 <Footer/>
