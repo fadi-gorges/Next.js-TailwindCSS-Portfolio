@@ -71,23 +71,29 @@
 }
 
 .h1-cursor.blinking-cursor {
-  @apply after:h-12 after:w-1
+  @apply h-12 w-1
 }
 
 .h2-cursor.blinking-cursor {
-  @apply after:h-8 after:w-0.5
+  @apply h-8 w-0.5
 }
 
 .blinking-cursor {
-  &:after {
-    animation: blink .6s linear infinite alternate;
-  }
-  @apply w-fit relative after:absolute after:bottom-0 after:-right-2 after:bg-primary
+  animation: blink .6s linear infinite alternate;
+  @apply absolute bottom-0 bg-primary
 }
 
 @keyframes blink {
-    0% {opacity: 1;}
-    40% {opacity: 1;}
-    60% {opacity: 0;}
-    100% {opacity: 0;}
+  0% {
+    opacity: 1;
   }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

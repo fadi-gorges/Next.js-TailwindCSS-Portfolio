@@ -24,8 +24,8 @@ const HomeSection = () => {
     }
 
     useEffect(() => {
-        incrementTitleText({
-            currentTitleText: titleText,
+        setTimeout(incrementTitleText, 500, {
+            currentTitleText: "",
             currentTitleTextRemaining: titleTextRemaining
         })
     }, [])
@@ -39,13 +39,13 @@ const HomeSection = () => {
                            className="w-56 h-56 rounded-full shadow-md md:w-fit md:h-fit"/>
                 </div>
                 <div className="col-span-12 flex flex-col gap-8 md:row-start-1 md:col-span-7 md:justify-center">
-                    <h1 className="hidden md:block text-primary font-extrabold tracking-wide">
-                        Full-Stack <br/>
-                        <span className="h1-cursor blinking-cursor">Software {titleText}</span>
+                    <h1 className="hidden md:block relative w-fit text-primary font-extrabold tracking-wide">
+                        Full-Stack<br/>
+                        Software {titleText}<span className="h1-cursor blinking-cursor"/>
                     </h1>
-                    <h2 className="md:hidden text-primary font-extrabold tracking-wide">
-                        Full-Stack <br/>
-                        <span className="h2-cursor blinking-cursor">Software {titleText}</span>
+                    <h2 className="md:hidden relative w-fit text-primary font-extrabold tracking-wide">
+                        Full-Stack<br/>
+                        Software {titleText}<span className="h2-cursor blinking-cursor"/>
                     </h2>
                     <h4>Hi, I&apos;m Fadi Gorges, an enthusiastic Software Engineering student based in Sydney,
                         Australia.</h4>
