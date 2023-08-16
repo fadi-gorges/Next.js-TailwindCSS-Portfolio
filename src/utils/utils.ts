@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react';
 const isBrowser = typeof window !== `undefined`;
 
 const getScrollPosition = () => {
-    return document.body.scrollTop - (document.body.clientTop || 0)
+    return isBrowser ? document.body.scrollTop - (document.body.clientTop || 0) : 0
 }
 
 export const useScrollPosition = () => {
