@@ -58,7 +58,6 @@ const NavProvider = ({children}: { children: React.ReactNode }) => {
     const [drawerOpen, setDrawerOpen] = useState(false);
 
     const scrollPos = useScrollPosition();
-    console.log(scrollPos)
     const [scrolledDown, setScrolledDown] = useState(false);
     const [sections, setSections] = useState<NodeListOf<HTMLElement>>();
     const [currentSection, setCurrentSection] = useState(0);
