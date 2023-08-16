@@ -4,7 +4,7 @@ import Section from "@components/page/Section";
 const HomeSection = () => {
     return (
         <Section id="home" fullScreen>
-            <div className="grid grid-cols-12 h-full gap-y-16">
+            <div className="grid grid-cols-12 h-full gap-y-10">
                 <div className="col-span-12 flex flex-col justify-end items-center md:col-start-9
                     md:col-span-4 md:justify-center md:items-start">
                     <Image src="/fadi.jpg" alt="Portrait of Fadi Gorges" width={300} height={300}
