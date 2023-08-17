@@ -7,7 +7,7 @@ import {isMobile} from "react-device-detect"
 const DungeonGame = ({setModalOpen}: {
     setModalOpen: React.Dispatch<React.SetStateAction<boolean>>
 }) => {
-    const {unityProvider, requestFullscreen, unload} = useUnityContext({
+    const {unityProvider, requestFullscreen, isLoaded, loadingProgression, unload} = useUnityContext({
         loaderUrl: "dungeon-build/Build/DungeonWeb.loader.js",
         dataUrl: "dungeon-build/Build/DungeonWeb.data",
         frameworkUrl: "dungeon-build/Build/DungeonWeb.framework.js",
@@ -57,7 +57,9 @@ const DungeonGame = ({setModalOpen}: {
                 <h3 className="font-bold text-lg">Dungeon of Death</h3>
                 <div className="py-4">
                     <Unity unityProvider={unityProvider} devicePixelRatio={devicePixelRatio}
-                           className="w-full select-none"/>
+                           className={`w-full select-none ${isLoaded ? '' : 'hidden'}`}/>
+                    <progress className={`progress progress-primary w-full ${isLoaded ? 'hidden' : ''}`}
+                              value={loadingProgression} max="1"/>
                 </div>
                 <div className="modal-action">
                     <button onClick={() => requestFullscreen(true)} className="btn btn-primary">
