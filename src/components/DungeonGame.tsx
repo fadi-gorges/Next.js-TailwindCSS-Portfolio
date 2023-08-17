@@ -54,7 +54,13 @@ const DungeonGame = ({setModalOpen}: {
         </dialog>
         : <dialog id="dungeon-modal" className="modal modal-open">
             <form method="dialog" className="modal-box max-w-screen-xl">
-                <h3 className="font-bold text-lg">Dungeon of Death</h3>
+                <div className="flex justify-between items-center">
+                    <h3 className="font-bold text-lg">Dungeon of Death</h3>
+                    {isLoaded && <button onClick={() => requestFullscreen(true)} className="btn btn-primary">
+                        Fullscreen
+                        <ArrowsPointingOutIcon className="w-6 h-6 ml-2"/>
+                    </button>}
+                </div>
                 <div className="py-4">
                     <Unity unityProvider={unityProvider} devicePixelRatio={devicePixelRatio}
                            className={`w-full select-none ${isLoaded ? '' : 'hidden'}`}/>
@@ -62,10 +68,6 @@ const DungeonGame = ({setModalOpen}: {
                               value={loadingProgression} max="1"/>
                 </div>
                 <div className="modal-action">
-                    <button onClick={() => requestFullscreen(true)} className="btn btn-primary">
-                        Fullscreen
-                        <ArrowsPointingOutIcon className="w-6 h-6 ml-2"/>
-                    </button>
                     <button onClick={handleModalClose} className="btn">Close</button>
                 </div>
             </form>
