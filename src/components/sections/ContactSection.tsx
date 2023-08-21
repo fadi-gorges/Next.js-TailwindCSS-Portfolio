@@ -26,7 +26,7 @@ const ContactSection = () => {
     };
 
     return (
-        <Section id="contact" bg="base-100">
+        <Section id="contact" className="bg-base-100">
             <h3 className="text-primary font-extrabold">CONTACT ME</h3>
             <div className="mt-8">
                 <h5>

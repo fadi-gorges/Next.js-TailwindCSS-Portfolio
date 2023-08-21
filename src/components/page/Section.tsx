@@ -1,13 +1,13 @@
 import React from "react";
 
-const Section = ({id, bg = "base-100", theme = 'light', fullScreen = false, children}: {
+const Section = ({id, theme = 'light', fullScreen = false, className, children}: {
     id: string,
-    bg?: string,
     theme?: 'light' | 'dark',
     fullScreen?: boolean,
+    className?: string,
     children: React.ReactNode
 }) => {
-    const sectionClasses = `section bg-${bg} ${fullScreen ? "h-screen" : ""} w-full`
+    const sectionClasses = `section ${fullScreen ? "h-screen" : ""} w-full ${className}`
 
     return (
         <div id={id} data-theme={theme} className={sectionClasses}>

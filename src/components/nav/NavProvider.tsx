@@ -53,7 +53,9 @@ const navLinks = [
     },
 ];
 
-const NavProvider = ({children}: { children: React.ReactNode }) => {
+const NavProvider = ({children}: {
+    children: React.ReactNode
+}) => {
     const pathname = usePathname();
     const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -63,7 +65,7 @@ const NavProvider = ({children}: { children: React.ReactNode }) => {
     const [currentSection, setCurrentSection] = useState(0);
 
     const navbarClasses = `w-full navbar fixed top-0 transition z-10 
-        ${scrolledDown ? "bg-base-100/80 backdrop-blur shadow-xl shadow-black/5" : "bg-base-100"}`;
+        ${scrolledDown ? "bg-base-100/80 backdrop-blur shadow-xl shadow-black/5" : ""}`;
 
     useEffect(() => {
         setSections(document.querySelectorAll(".section"))

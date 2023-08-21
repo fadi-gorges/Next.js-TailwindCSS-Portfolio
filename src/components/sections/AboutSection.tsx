@@ -3,7 +3,7 @@ import Section from "@components/page/Section";
 
 const AboutSection = () => {
     return (
-        <Section id="about" bg="base-200">
+        <Section id="about" className="bg-base-200">
             <div className="grid grid-cols-12 h-full gap-y-10">
                 <div className="col-span-12 flex flex-col justify-center items-center gap-8 md:col-span-5">
                     <Image src="/about-image.jpg" alt="Portrait of Fadi Gorges" width={400} height={400}

@@ -84,7 +84,7 @@ const skills = [
 
 const SkillsSection = () => {
     return (
-        <Section id="skills" bg="base-100">
+        <Section id="skills" className="bg-base-100">
             <h3 className="text-primary font-extrabold">MY SKILLS</h3>
             <div className="grid grid-cols-12 md:gap-5 mt-10">
                 {

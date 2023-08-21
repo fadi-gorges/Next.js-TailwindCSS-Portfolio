@@ -32,8 +32,8 @@ const DungeonGame = ({setModalOpen}: {
         [devicePixelRatio]
     );
 
-    const handleModalClose = () => {
-        unload()
+    const handleModalClose = async () => {
+        await unload()
         setModalOpen(false)
     }
 

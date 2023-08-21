@@ -59,7 +59,7 @@ const ProjectsSection = () => {
     ]
 
     return (
-        <Section id="projects" bg="base-200">
+        <Section id="projects" className="bg-base-100">
             <h3 className="text-primary font-extrabold mb-8">MY PROJECTS</h3>
             {projects.map(project => (
                 <div key={project.name} className="scroll-transition slide-in-left">
