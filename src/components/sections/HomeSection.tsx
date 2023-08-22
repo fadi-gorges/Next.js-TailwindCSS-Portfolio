@@ -50,7 +50,7 @@ const HomeSection = () => {
                     <h4>Hi, I&apos;m Fadi Gorges, an enthusiastic Software Engineering student based in Sydney,
                         Australia.</h4>
                     <div className="flex gap-5">
-                        <a href="https://www.linkedin.com/in/fadi-gorges-174a88246/" target="_blank">
+                        <a href="https://www.linkedin.com/in/fadi-gorges" target="_blank">
                             <svg fill="currentColor"
                                  className="transition hover:text-primary hover:drop-shadow-[0_3px_.8px_rgba(0,0,0,0.25)] active:scale-90"
                                  xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
