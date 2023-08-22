@@ -33,7 +33,7 @@ const DungeonGame = ({setModalOpen}: {
     );
 
     const handleModalClose = async () => {
-        await unload()
+        unload()
         setModalOpen(false)
     }
 
