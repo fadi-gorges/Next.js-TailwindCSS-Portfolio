@@ -43,6 +43,6 @@ export const scrollIntoView = (id: string, offset: number) => {
     }
 }
 
-export const numberWithCommas = (x) => {
+export const numberWithCommas = (x: number) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
