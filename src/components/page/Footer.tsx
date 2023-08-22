@@ -13,7 +13,7 @@ const Footer = () => {
             </div>
             <div>
                 <div className="grid grid-flow-col gap-4">
-                    <a href="https://www.linkedin.com/in/fadi-gorges-174a88246/" target="_blank">
+                    <a href="https://www.linkedin.com/in/fadi-gorges/" target="_blank">
                         <svg fill="currentColor"
                              className="hover:text-primary hover:drop-shadow-[0_3px_.8px_rgba(0,0,0,0.25)] transition active:scale-90"
                              xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
