@@ -1,20 +1,27 @@
 'use client'
 import Section from "@components/page/Section";
 import Image from "next/image";
-import {ArrowTopRightOnSquareIcon} from "@heroicons/react/24/outline";
-import {useState} from "react";
+import {ArrowTopRightOnSquareIcon, BookmarkSquareIcon, UserCircleIcon} from "@heroicons/react/24/outline";
+import {useEffect, useState} from "react";
 import DungeonGame from "@components/DungeonGame";
+import {numberWithCommas} from "@utils/utils";
 
 const ProjectsSection = () => {
+    const [citizenshipStats, setCitizenshipStats] = useState({
+        userCount: 0,
+        testCount: 0
+    })
     const [dungeonModalOpen, setDungeonModalOpen] = useState(false)
 
-    const openDungeonModal = () => {
-        setDungeonModalOpen(true)
+    const getCitizenshipStats = async () => {
+        const res = await fetch("https://www.citizenshipau.com/api/usage")
+        const stats = await res.json()
+        setCitizenshipStats(stats)
     }
 
-    const closeDungeonModal = () => {
-        setDungeonModalOpen(false)
-    }
+    useEffect(() => {
+        getCitizenshipStats()
+    }, []);
 
     const projects = [
         {
@@ -23,6 +30,18 @@ const ProjectsSection = () => {
         front-end is built in NextJS, TypeScript and styled with TailwindCSS. For the back-end, Supabase is utilised
         to handle user authentication and data storage. The website is hosted on Vercel.`,
             image: "/citizenshipau-mockup.png",
+            stats: [
+                {
+                    name: "Users",
+                    value: numberWithCommas(citizenshipStats.userCount),
+                    icon: <UserCircleIcon className="inline-block h-10 w-10 stroke-current"/>
+                },
+                {
+                    name: "Tests Completed",
+                    value: numberWithCommas(citizenshipStats.testCount),
+                    icon: <BookmarkSquareIcon className="inline-block h-10 w-10 stroke-current"/>
+                }
+            ],
             buttons: [
                 <a key="1" href="https://www.citizenshipau.com" target="_blank" className="btn btn-primary">
                     VIEW CITIZENSHIPAU.COM
@@ -37,7 +56,7 @@ const ProjectsSection = () => {
         Industrial Technology Multimedia course, in which I received an assessment mark of 95/100 (Band 6).`,
             image: "/dungeonofdeath-mockup.png",
             buttons: [
-                <button key="1" onClick={openDungeonModal} className="btn btn-primary">
+                <button key="1" onClick={() => setDungeonModalOpen(true)} className="btn btn-primary">
                     PLAY DUNGEON OF DEATH
                     <ArrowTopRightOnSquareIcon className="w-6 h-6 ml-2"/>
                 </button>
@@ -59,7 +78,7 @@ const ProjectsSection = () => {
     ]
 
     return (
-        <Section id="projects" className="bg-base-100">
+        <Section id="projects" className="bg-base-200">
             <h3 className="text-primary font-extrabold mb-8">MY PROJECTS</h3>
             {projects.map(project => (
                 <div key={project.name} className="scroll-transition slide-in-left">
@@ -74,6 +93,19 @@ const ProjectsSection = () => {
                             <h6>
                                 {project.description}
                             </h6>
+                            {project.stats && (
+                                <div className="stats stats-vertical xl:stats-horizontal  shadow">
+                                    {project.stats.map(stat => (
+                                        <div key={stat.name} className="stat">
+                                            <div className="stat-figure text-primary">
+                                                {stat.icon}
+                                            </div>
+                                            <div className="stat-title text-base-content">{stat.name}</div>
+                                            <div className="stat-value">{stat.value}</div>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
                             {project.buttons.map(button => button)}
                         </div>
                     </div>
